@@ -230,3 +230,128 @@ Sometimes, Git can’t automatically merge changes due to conflicts (e.g., edits
   ```
 
 ---
+
+## git diff
+
+`git diff` is a command used to show the differences between two Git data sources (working directory, staging area, commits, etc.)
+
+### 1. Basic Difference
+```bash
+git diff
+```
+> Shows changes between your working directory and the staging area. If nothing is staged, it shows nothing.
+
+### How to Read the Output
+- `a/` → File A (original)
+- `b/` → File B (changed)
+- `---` → Lines from File A
+- `+++` → Lines from File B
+- `@@` → Line number context
+
+### 2. Show Staged Differences
+```bash
+git diff --staged
+```
+
+### 3. Show Differences Between Branches
+```bash
+git diff branch-01 branch-02
+```
+
+### 4. Show Differences Between Commits
+```bash
+git diff <commit-hash-1> <commit-hash-2>
+```
+
+---
+
+## git stash
+
+`git stash` temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else.
+
+### Why Use It?
+If you're working on a branch and need to switch but have uncommitted changes, stash them temporarily.
+
+### 1. Stash Current Changes
+```bash
+git stash
+```
+
+### 2. Stash with a Message
+```bash
+git stash save "work in progress"
+```
+
+### 3. View Stash List
+```bash
+git stash list
+```
+
+### 4. Apply Most Recent Stash
+```bash
+git stash apply
+```
+> *Note: This keeps the stash after applying it.*
+
+### 5. Apply Specific Stash
+```bash
+git stash apply stash@{0}
+```
+
+### 6. Apply and Remove Most Recent Stash
+```bash
+git stash pop
+```
+
+### 7. Drop a Specific Stash
+```bash
+git stash drop stash@{0}
+```
+
+### 8. Clear All Stashes
+```bash
+git stash clear
+```
+
+---
+
+## git tag
+
+Tags are used to mark specific points in Git history as important, typically used to label release versions.
+
+### 1. List All Tags
+```bash
+git tag
+```
+
+### 2. Create a Lightweight Tag
+```bash
+git tag v1.0
+```
+
+### 3. Create an Annotated Tag
+```bash
+git tag -a v1.0 -m "Release version 1.0"
+```
+
+### 4. Tag a Specific Commit
+```bash
+git tag -a v1.0 <commit-hash>
+```
+
+### 5. Push Tags to Remote
+```bash
+git push origin --tags
+```
+
+### 6. Delete a Local Tag
+```bash
+git tag -d v1.0
+```
+
+### 7. Delete a Remote Tag
+```bash
+git push origin --delete tag v1.0
+```
+
+---
