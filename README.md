@@ -355,3 +355,70 @@ git push origin --delete tag v1.0
 ```
 
 ---
+
+## git rebase
+
+### What is Rebase?
+Rebase is used to move or combine a sequence of commits to a new base commit — useful for cleaner commit history.
+
+### In Simple Terms:
+Rebase replays your work from a new point, making your history linear and clean.
+
+### Point to be Noted:
+Ensure that you are on the branch you want to rebase
+
+### Common Commands
+
+1. Start a Rebase
+```bash
+git rebase <base-branch>
+```
+
+2. Rebase Current Branch onto Main
+```bash
+git checkout feature-branch
+git rebase main
+```
+
+3. Abort an Ongoing Rebase
+```bash
+git rebase --abort
+```
+
+4. Continue Rebase After Conflict Resolution
+```bash
+git rebase --continue
+```
+
+---
+
+## git reflog
+
+### What is Reflog?
+Reflog is like a logbook of everything you've done in Git — even the changes not shown in regular logs.
+
+### In Simple Terms:
+It tracks all your HEAD movements, so you can recover lost commits.
+
+### Common Commands
+
+1. Show Reflog History
+```bash
+git reflog
+```
+
+2. Recover a Lost Commit
+```bash
+git checkout <commit-hash>
+```
+
+3. Create a New Branch from Lost Commit
+```bash
+git branch recovered-branch <commit-hash>
+```
+
+4. Reset to an Earlier Safe State
+```bash
+git reset --hard <commit-hash>
+```
+---
