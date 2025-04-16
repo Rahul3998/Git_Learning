@@ -159,3 +159,74 @@ git config --global user.email "example@email.com"
 
 ---
 
+## Git Branch
+
+Branching allows you to create independent lines of development within your repository.
+
+### 1. Check the Current Branch
+```bash
+git branch
+```
+
+### 2. Create a New Branch
+```bash
+git branch branch-01
+```
+
+### 3. Switch to a Branch
+```bash
+git switch branch-01
+```
+or:
+```bash
+git checkout branch-01
+```
+
+### 4. Create and Switch to a New Branch in One Command
+```bash
+git switch -c branch-02
+```
+
+---
+
+## Merging Branches
+
+When you're ready to bring changes from one branch into another (typically from a feature branch into `main`), use the following:
+
+### Merge a Branch into the Current Branch
+```bash
+git merge <branch_name>
+```
+
+This integrates changes from `<branch_name>` into your current working branch.
+
+### Handling Merge Conflicts
+
+Sometimes, Git can’t automatically merge changes due to conflicts (e.g., edits on the same line).
+
+#### Two Ways to Resolve Merge Conflicts:
+
+### 1. Manual Resolution
+- Run the merge command.
+- Open the conflicted file.
+- Manually remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+- Edit to resolve the differences.
+- Save the file.
+- Add and commit:
+  ```bash
+  git add <file>
+  git commit -m "Resolved merge conflict"
+  ```
+
+### 2. Automated Resolution Using VS Code
+- Run the merge command.
+- Open the conflicted file in VS Code.
+- Use the UI options (e.g., "Accept Current Change", "Accept Incoming Change", or both).
+- Save the file.
+- Add and commit:
+  ```bash
+  git add <file>
+  git commit -m "Resolved merge conflict using VS Code"
+  ```
+
+---
