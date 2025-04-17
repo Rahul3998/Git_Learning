@@ -6,6 +6,6 @@ class Hello
         System.out.println("Hello World");
         System.out.println("Hello World");
         System.out.println("Hello World");
-		// Here is the changes which i have made in the clone project
+		// This line is now been updated
     }
 }
